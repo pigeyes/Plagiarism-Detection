@@ -83,10 +83,11 @@ public class PlagiarismDetector {
         for (int k = 0; k < tupleSize; k++) {
             String tmp = words[start + k];
             if (synsMap.containsKey(tmp)) {
-                key.append(synsMap.get(tmp)).append(" ");
+                key.append(synsMap.get(tmp));
             } else {
-                key.append(tmp).append(" ");
+                key.append(tmp);
             }
+            key.append(" ");
         }
         return key.toString();
     }
@@ -97,7 +98,7 @@ public class PlagiarismDetector {
 
         try {
             StringBuilder sb = new StringBuilder();
-            String line = br.readLine().toLowerCase();
+            String line = br.readLine();
 
             while (line != null) {
                 sb.append(line);
@@ -105,7 +106,7 @@ public class PlagiarismDetector {
                 line = br.readLine();
             }
             // non-english-alphabets are treated as word separator
-            return sb.toString().split("[^a-zA-Z]+");
+            return sb.toString().toLowerCase().split("[^a-zA-Z]+");
         } finally {
             br.close();
         }

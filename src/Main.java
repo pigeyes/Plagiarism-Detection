@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
  */
 
 public class Main {
-    private static final String USAGE = "USAGE: java PlagiarismDetector.java " +
+    private static final String USAGE = "USAGE: java -jar plagiarismDetector.jar " +
             "[syns_file] [file_to_test] [reference_file] [tuple_size]";
     private static final String INVALID_TUPLE_SIZE = "Tuple size should be between 1~2147483647.";
 
